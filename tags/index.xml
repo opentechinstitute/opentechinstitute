@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on OTI Work Blog</title>
+    <link>https://opentechinstitute.github.io/tags/</link>
+    <description>Recent content in Tags on OTI Work Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Sep 2017 15:40:02 -0400</lastBuildDate>
+    
+	<atom:link href="https://opentechinstitute.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Decentralization</title>
+      <link>https://opentechinstitute.github.io/tags/decentralization/</link>
+      <pubDate>Tue, 12 Sep 2017 15:40:02 -0400</pubDate>
+      
+      <guid>https://opentechinstitute.github.io/tags/decentralization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>M Lab</title>
+      <link>https://opentechinstitute.github.io/tags/m-lab/</link>
+      <pubDate>Tue, 24 Oct 2017 10:02:53 -0400</pubDate>
+      
+      <guid>https://opentechinstitute.github.io/tags/m-lab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matrix</title>
+      <link>https://opentechinstitute.github.io/tags/matrix/</link>
+      <pubDate>Tue, 12 Sep 2017 15:40:02 -0400</pubDate>
+      
+      <guid>https://opentechinstitute.github.io/tags/matrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement Kit</title>
+      <link>https://opentechinstitute.github.io/tags/measurement-kit/</link>
+      <pubDate>Tue, 24 Oct 2017 10:02:53 -0400</pubDate>
+      
+      <guid>https://opentechinstitute.github.io/tags/measurement-kit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mozfest 2017</title>
+      <link>https://opentechinstitute.github.io/tags/mozfest-2017/</link>
+      <pubDate>Tue, 12 Sep 2017 15:40:02 -0400</pubDate>
+      
+      <guid>https://opentechinstitute.github.io/tags/mozfest-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Portable</title>
+      <link>https://opentechinstitute.github.io/tags/portable/</link>
+      <pubDate>Tue, 12 Sep 2017 15:40:02 -0400</pubDate>
+      
+      <guid>https://opentechinstitute.github.io/tags/portable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>https://opentechinstitute.github.io/tags/raspberry-pi/</link>
+      <pubDate>Tue, 24 Oct 2017 10:02:53 -0400</pubDate>
+      
+      <guid>https://opentechinstitute.github.io/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concepts on OTI Work Blog</title>
+    <link>https://opentechinstitute.github.io/concept/</link>
+    <description>Recent content in Concepts on OTI Work Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Sep 2017 14:06:33 -0400</lastBuildDate>
+    
+	<atom:link href="https://opentechinstitute.github.io/concept/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Concept</title>
+      <link>https://opentechinstitute.github.io/concept/concept/</link>
+      <pubDate>Thu, 07 Sep 2017 14:06:33 -0400</pubDate>
+      
+      <guid>https://opentechinstitute.github.io/concept/concept/</guid>
+      <description>This is all about making something cool.</description>
+    </item>
+    
+  </channel>
+</rss>
