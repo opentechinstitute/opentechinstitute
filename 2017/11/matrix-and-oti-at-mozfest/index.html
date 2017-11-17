@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Matrix and OTI at Mozfest" />
+<meta property="og:description" content="At last weekend&rsquo;s Mozilla Festival (Mozfest for short), the annual open web/internet freedom conference/party, OTI facilitated an astonishing number of sessions. Within the Decentralization space, we organized a local and portable chat server, using Matrix, that was available to attendees as an alternative to platforms like Slack or Google Hangouts. In this context, the community retains control over the Matrix service because it lives on a box that they can hold in their hands." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://opentechinstitute.github.io/2017/11/matrix-and-oti-at-mozfest/" />
+
+
+
+<meta property="article:published_time" content="2017-11-01T17:00:08&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-11-01T17:00:08&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Matrix and OTI at Mozfest"/>
+<meta name="twitter:description" content="At last weekend&rsquo;s Mozilla Festival (Mozfest for short), the annual open web/internet freedom conference/party, OTI facilitated an astonishing number of sessions. Within the Decentralization space, we organized a local and portable chat server, using Matrix, that was available to attendees as an alternative to platforms like Slack or Google Hangouts. In this context, the community retains control over the Matrix service because it lives on a box that they can hold in their hands."/>
+<meta name="twitter:site" content="@OTI"/>
+<meta name="generator" content="Hugo 0.30.2" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Matrix and OTI at Mozfest",
+  "url": "https://opentechinstitute.github.io/2017/11/matrix-and-oti-at-mozfest/",
+  "wordCount": "1179",
+  "datePublished": "2017-11-01T17:00:08&#43;00:00",
+  "dateModified": "2017-11-01T17:00:08&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Ross Schulman"
+  }
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://opentechinstitute.github.io/2017/11/matrix-and-oti-at-mozfest/">
+
+    <title>Matrix and OTI at Mozfest | OTI Work Blog</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://opentechinstitute.github.io/css/style.css" rel="stylesheet" integrity="sha384-zYRhIy0/Yl1e5lW9cimY1AugfdkHChXyCbs2NKFaLTgeQjVfj/CMPIUdjXm/JPWV" crossorigin="anonymous">
+
+    
+
+    
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link " href="https://opentechinstitute.github.io/">Home</a>
+          
+          
+          <a class="nav-link" href="https://opentechinstitute.github.io/concept/concept/">Concept</a>
+          
+          
+        </nav>
+      </div>
+    </div>
+
+    <header class="blog-header">
+      <div class="container">
+        <h1 class="blog-title"><a href="https://opentechinstitute.github.io/" rel="home">OTI Work Blog</a></h1>
+        <p class="lead blog-description">A place for OTI to put shorter updates on the projects we&rsquo;re working on.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="https://opentechinstitute.github.io/2017/11/matrix-and-oti-at-mozfest/">Matrix and OTI at Mozfest</a></h2>
+    <p class="blog-post-meta"><time datetime="2017-11-01T17:00:08Z">Wed Nov 01, 2017</time> by Ross Schulman</p>
+  </header>
+  
+
+<p>At last weekend&rsquo;s <a href="https://mozillafestival.org/">Mozilla Festival</a> (Mozfest for short), the annual open web/internet freedom conference/party, OTI facilitated an <a href="https://www.newamerica.org/oti/blog/oti-mozfest-2017/">astonishing number of sessions</a>. Within the Decentralization space, we organized a local and portable chat server, using Matrix, that was available to attendees as an alternative to platforms like Slack or Google Hangouts. In this context, the community retains control over the Matrix service because it lives on a box that they can hold in their hands.</p>
+
+<h2 id="what-is-matrix">What is Matrix?</h2>
+
+<p><a href="https://matrix.org/">Matrix</a> is a relatively new protocol for federated transfer of arbitrary data. The fact that it is federated means that two friends, Alice and Bob, can communicate, each using their own server. Alice can have her own node and Bob can have his and the two of them can still exchange messages. By and large, the matrix protocol is used to exchange real-time chat or images, much like IRC or Slack does, but it has also been used for things such as MIDI control and WebVR. The protocol also implements end-to-end encryption.</p>
+
+<h2 id="what-did-we-build">What did We Build?</h2>
+
+<p><img src="/images/mozfest-result.png" alt="Photo of the end result" /></p>
+
+<p>What we ended up building made use of a system-on-a-chip mini-computer from <a href="http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145457216438">Odroid</a>. It is a credit-card sized fully featured computer that runs Linux. We initially planned to use a Raspberry Pi 3, but the current Matrix server implementation, called <a href="https://github.com/matrix-org/synapse">Synapse</a> is rather RAM-hungry and the Odroid has 2 GB of RAM to the Pi&rsquo;s 1. OTI also happened to have a touch and HDMI capable screen designed to work with the Odroid on which we planned to display statistics about the server itself for people to interact with. Finally, we had a lithium ion battery and a charge controller chip with which we hoped to make the whole box portable without needing to be plugged in.</p>
+
+<p>Synapse is actually fairly easy to install although it does require knowing a bit about servers and the DNS system. There are packages available for a number of Linux distributions. Check out the <a href="https://github.com/matrix-org/synapse">Synapse Github Repo</a> for detailed instructions. Synapse can use a simple sqlite database, which works fine for smaller installations, but given the limited resources of the computer, we had a hunch that using a dedicated database might be faster. Synapse supports PostgresQL as well, so that&rsquo;s what we used.</p>
+
+<p>One major issue with trying to run any kind of server that isn&rsquo;t a cloud-based virtual machine is making that server accessible to the broader internet. Most networks, including the one at Mozfest, use Network Address Translation (NAT), Dynamic Host Configuration Protocol (DHCP), and firewalls, all of which make running a server difficult if not impossible. One tempting solution was to further emphasize the local nature of the server by making it only accessible on the local network&ndash;thereby resolving all of these problems by effectively ignoring them. In the end, however, making the server accessible throughout the weekend, even when people were not physically in the space seemed like it would provide the best opportunity to reach the people who might be interested.</p>
+
+<p>To make that possible, we tunneled the necessary ports through an <code>ssh</code> connection to a server here in the DC office of OTI. This relay allowed the Synapse server to be reached by a consistent IP address that we could point DNS at, and which had the necessary ports exposed to the broader internet. These kinds of problems are endemic in the decentralization space and need solutions that are better and easier to implement. For this particular situation, the following command did the trick:</p>
+
+<pre><code class="language-~shell">~/.synapse$ while true; do ssh -R 8448:localhost:8448 -R 8008:localhost:8008 -R 9092:localhost:9092 -n mozfest.matrix.org sleep 1d; done
+</code></pre>
+
+<p>This snippet forwarded three ports, 8448, 8008, and 9092, from <code>mozfest.matrix.org</code> (the domain name we were using) to the portable box. Putting it in the loop made sure that if the connection dropped, it would keep trying until it could reconnect. Ports 8448 and 8008 are Matrix&rsquo;s, while 9092 is for Prometheus.</p>
+
+<p>To capture statistics, both out of curiosity and to power the visualizations, we used <a href="https://prometheus.io/">Prometheus</a>, a popular open source monitoring program that Synapse already has hooks built for. To generate the pretty pictures, <a href="https://grafana.com/">Grafana</a> did the trick, and interfaces with Prometheus with a minimum of setup.</p>
+
+<p><img src="/images/mozfest-grafana.png" alt="Grafana Graph Example" /></p>
+
+<h2 id="performance-and-stats">Performance and Stats</h2>
+
+<p>The Odroid held up well in tough circumstances. We noticed no slowness on the part of the server, and messages seemed to sync nearly immediately. We even conducted a virtual reality tele-conference that was set up by the server and it went without a hitch. It looked like none of the users tried to join some of the truly large rooms in the Matrix network (which can have many tens of thousands of users). If they had, it would have put a huge strain on the available RAM of the Odroid.</p>
+
+<p>The network on the Odroid, on the other hand, caused significant problems. For reasons that we have still not diagnosed, the WiFi card on the Odroid would abruptly stop working at random intervals, requiring a restart of the entire system. This is a process that could take quite a while if we were not physically near the server.</p>
+
+<p>The other feature that did not work as planned was the battery power. The battery system simply did not provide enough amperage to support the Odroid and the screen at the same time. Unplugging the server with the screen off did allow for some untethered time, but was less impressive without the visuals.</p>
+
+<p>Use of the server ranged from zero connected users at night up to a max of 10-15 during the day, so this was not a high-traffic test. It is worth noting, however, that the server was bridged into two of the conference Slack channels which had higher usage and a good deal of traffic that the Synapse server handled without a problem.</p>
+
+<h2 id="future-plans">Future Plans</h2>
+
+<p>There are a few different further ideas that we think could be worth following up on here:</p>
+
+<ol>
+<li><p><strong>Do away with the large LCD touch screen.</strong> The screen was a fun idea, but the reality is that it draws way too much power, produces too much heat, and isn&rsquo;t that easy to see. In addition, one of the Decentralization space staff came up with the good idea of using a projector to throw the current stats up a wall, which made the screen redundant. Instead, a <a href="https://www.adafruit.com/product/181">small LCD</a> or <a href="https://www.adafruit.com/product/326">OLED display</a> would have lowered the power requirements as well as the footprint (not to mention the cost).</p></li>
+
+<li><p><strong>Design a smaller case.</strong> With the large LCD out of the way, the case can get a lot smaller. While this prototype was portable, it was bulky and difficult to hold and carry. A smaller design would make it much easier to hand around or toss in a bag. It would also cut down on the cost of 3D printing.</p></li>
+
+<li><p><strong>Use a bigger battery.</strong> The battery in the box was a 3000mAh which isn&rsquo;t bad, but when it comes to batteries, bigger is always better. If the end goal is something that can be carried around for long periods between recharges, conserving power and making it last longer will be crucial.</p></li>
+</ol>
+
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+    <section>
+    <h4>Share</h4>
+    <nav class="nav sharing-icons">
+      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fopentechinstitute.github.io%2f2017%2f11%2fmatrix-and-oti-at-mozfest%2f" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fopentechinstitute.github.io%2f2017%2f11%2fmatrix-and-oti-at-mozfest%2f" title="Share on Google+"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fopentechinstitute.github.io%2f2017%2f11%2fmatrix-and-oti-at-mozfest%2f" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://twitter.com/home?status=https%3a%2f%2fopentechinstitute.github.io%2f2017%2f11%2fmatrix-and-oti-at-mozfest%2f" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
+    </nav>
+  </section>
+
+  
+
+  
+
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        <aside class="col-sm-3 ml-auto blog-sidebar">
+  
+  <section class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p>Follow OTI&rsquo;s work progress on tech projects here!</p>
+  </section>
+  
+
+  
+        <section class="sidebar-module">
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+
+
+<li><a href="/2017/11/matrix-and-oti-at-mozfest/">Matrix and OTI at Mozfest</a></li>
+
+<li><a href="/2017/10/deploying-and-managing-a-fleet-of-measurement-kit-devices/">Deploying and Managing a Fleet of Measurement Kit Devices</a></li>
+
+<li><a href="/2017/10/building-raspberry-pi-m-lab-autotester/">Building Raspberry Pi M Lab Autotester</a></li>
+
+    </ol>
+  </section>
+
+  
+
+  
+  <section class="sidebar-module">
+    <h4>Links</h4>
+    <ol class="list-unstyled">
+      
+      <li><a href="https://github.com/opentechinstitute/">OTI Github</a></li>
+      
+      <li><a href="https://opentechnologyinstitute.org">Open Technology Institute</a></li>
+      
+    </ol>
+  </section>
+  
+</aside>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>
+      
+      Blog template created by <a href="https://twitter.com/mdo">@mdo</a>, ported to Hugo by <a href='https://twitter.com/mralanorth'>@mralanorth</a>.
+      
+      </p>
+      <p>
+      <a href="#">Back to top</a>
+      </p>
+      
+<script type="text/javascript">
+  var _paq = _paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.opentechinstitute.org/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+    </footer>
+
+  </body>
+
+</html>

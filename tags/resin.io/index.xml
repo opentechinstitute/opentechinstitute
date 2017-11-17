@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resin.io on OTI Work Blog</title>
+    <link>https://opentechinstitute.github.io/tags/resin.io/</link>
+    <description>Recent content in Resin.io on OTI Work Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Oct 2017 10:02:53 -0400</lastBuildDate>
+    
+	<atom:link href="https://opentechinstitute.github.io/tags/resin.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deploying and Managing a Fleet of Measurement Kit Devices</title>
+      <link>https://opentechinstitute.github.io/2017/10/deploying-and-managing-a-fleet-of-measurement-kit-devices/</link>
+      <pubDate>Tue, 31 Oct 2017 10:02:53 -0400</pubDate>
+      
+      <guid>https://opentechinstitute.github.io/2017/10/deploying-and-managing-a-fleet-of-measurement-kit-devices/</guid>
+      <description>In our pilot project, Measuring Broadband in Schools, we used small Odroid computers running the Network Diagnostic Tool (NDT) to measure internet health in public school classrooms in Alexandria, Virginia. Installing and running code on these computers was done manually and managing them was a bit of a headache. The project was a prototype, intended to be short-term, so while setup and management was manual a more sustainable next stage solution had to be devised.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/2017/11/matrix-and-oti-at-mozfest/</loc>
+    <lastmod>2017-11-01T17:00:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/2017/10/deploying-and-managing-a-fleet-of-measurement-kit-devices/</loc>
+    <lastmod>2017-10-31T10:02:53-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/2017/10/building-raspberry-pi-m-lab-autotester/</loc>
+    <lastmod>2017-10-24T10:02:53-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/concept/concept/</loc>
+    <lastmod>2017-09-07T14:06:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/concept/</loc>
+    <lastmod>2017-09-07T14:06:33-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/tags/m-lab/</loc>
+    <lastmod>2017-10-31T10:02:53-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/tags/measurement-kit/</loc>
+    <lastmod>2017-10-31T10:02:53-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/</loc>
+    <lastmod>2017-11-01T17:00:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/post/</loc>
+    <lastmod>2017-11-01T17:00:08+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/tags/raspberry-pi/</loc>
+    <lastmod>2017-10-24T10:02:53-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/tags/resin.io/</loc>
+    <lastmod>2017-10-31T10:02:53-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://opentechinstitute.github.io/tags/</loc>
+    <lastmod>2017-10-31T10:02:53-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

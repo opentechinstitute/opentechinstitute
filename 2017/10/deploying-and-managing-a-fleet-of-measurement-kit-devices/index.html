@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Deploying and Managing a Fleet of Measurement Kit Devices" />
+<meta property="og:description" content="In our pilot project, Measuring Broadband in Schools, we used small Odroid computers running the Network Diagnostic Tool (NDT) to measure internet health in public school classrooms in Alexandria, Virginia. Installing and running code on these computers was done manually and managing them was a bit of a headache. The project was a prototype, intended to be short-term, so while setup and management was manual a more sustainable next stage solution had to be devised." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://opentechinstitute.github.io/2017/10/deploying-and-managing-a-fleet-of-measurement-kit-devices/" />
+
+
+
+<meta property="article:published_time" content="2017-10-31T10:02:53-04:00"/>
+
+<meta property="article:modified_time" content="2017-10-31T10:02:53-04:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Deploying and Managing a Fleet of Measurement Kit Devices"/>
+<meta name="twitter:description" content="In our pilot project, Measuring Broadband in Schools, we used small Odroid computers running the Network Diagnostic Tool (NDT) to measure internet health in public school classrooms in Alexandria, Virginia. Installing and running code on these computers was done manually and managing them was a bit of a headache. The project was a prototype, intended to be short-term, so while setup and management was manual a more sustainable next stage solution had to be devised."/>
+<meta name="twitter:site" content="@OTI"/>
+<meta name="generator" content="Hugo 0.30.2" />
+
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Deploying and Managing a Fleet of Measurement Kit Devices",
+  "url": "https://opentechinstitute.github.io/2017/10/deploying-and-managing-a-fleet-of-measurement-kit-devices/",
+  "wordCount": "951",
+  "datePublished": "2017-10-31T10:02:53-04:00",
+  "dateModified": "2017-10-31T10:02:53-04:00",
+  "author": {
+    "@type": "Person",
+    "name": "Chris Ritzo"
+  },
+  "keywords": "M-Lab, Resin.io, Measurement Kit"
+}
+</script>
+
+
+
+    <link rel="canonical" href="https://opentechinstitute.github.io/2017/10/deploying-and-managing-a-fleet-of-measurement-kit-devices/">
+
+    <title>Deploying and Managing a Fleet of Measurement Kit Devices | OTI Work Blog</title>
+
+    <!-- combined, minified CSS -->
+    <link href="https://opentechinstitute.github.io/css/style.css" rel="stylesheet" integrity="sha384-zYRhIy0/Yl1e5lW9cimY1AugfdkHChXyCbs2NKFaLTgeQjVfj/CMPIUdjXm/JPWV" crossorigin="anonymous">
+
+    
+
+    
+
+    
+
+    
+
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link " href="https://opentechinstitute.github.io/">Home</a>
+          
+          
+          <a class="nav-link" href="https://opentechinstitute.github.io/concept/concept/">Concept</a>
+          
+          
+        </nav>
+      </div>
+    </div>
+
+    <header class="blog-header">
+      <div class="container">
+        <h1 class="blog-title"><a href="https://opentechinstitute.github.io/" rel="home">OTI Work Blog</a></h1>
+        <p class="lead blog-description">A place for OTI to put shorter updates on the projects we&rsquo;re working on.</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          
+
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="https://opentechinstitute.github.io/2017/10/deploying-and-managing-a-fleet-of-measurement-kit-devices/">Deploying and Managing a Fleet of Measurement Kit Devices</a></h2>
+    <p class="blog-post-meta"><time datetime="2017-10-31T10:02:53-04:00">Tue Oct 31, 2017</time> by Chris Ritzo in 
+
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/m-lab" rel="tag">M-Lab</a>, <a href="/tags/resin.io" rel="tag">Resin.io</a>, <a href="/tags/measurement-kit" rel="tag">Measurement Kit</a>
+
+</p>
+  </header>
+  <p>In our pilot project, <a href="https://www.newamerica.org/in-depth/measuring-broadband-alexandrias-schools/">Measuring Broadband in Schools</a>, we used small Odroid computers running the Network Diagnostic Tool (NDT) to measure internet health in public school classrooms in Alexandria, Virginia. Installing and running code on these computers was done manually and managing them was a bit of a headache. The project was a prototype, intended to be short-term, so while setup and management was manual a more sustainable next stage solution had to be devised. We’ve started work on a solution to provision and manage small computers like the ones we used in the pilot, which we hope will provide a more sustainable solution for both individuals wanting to run regular tests from their home connections and for groups who wish to conduct research projects similar to our work in Alexandria, VA.</p>
+
+<p>I recently wrote about <a href="https://opentechinstitute.github.io/2017/10/building-raspberry-pi-m-lab-autotester/">Building a Raspberry Pi M-Lab Auto-tester</a>, outlining how to set up a Raspberry Pi 3 to run Measurement Kit, an open source library that provides a suite of network measurement tests, including NDT, OONI, and Neubot. That work is still in progress, but in the end will be suitable for a home or small business user to regularly run tests to measure their internet connection over time, and see a visualization of their device’s data over time.</p>
+
+<p>But what about deploying and managing a fleet of computers all running the same code? To do that effectively, we need a more scalable solution. We’re currently prototyping using <a href="https://resin.io/">Resin.io</a>, an “Internet of Things” service, which allows us to bake our code into a Docker container, and push it to a fleet of devices. We’ve setup two Resin “Applications,” each of which is tied to a type of device. In the image below you’ll see we’ve set up two applications, one for a Raspberry Pi 3 and another for an Odroid C1/C1+.</p>
+
+<p><img src="/images/mkit-fleet-resin1.png" alt="Resin Applications" /></p>
+
+<p>We can then download a “Resino” for our application, which is a special disk image that gets written to a new device’s SD card. Every new Raspberry Pi 3 that we want to use in our fleet will use the same disk image. This makes setting up a new device dead simple, and is one of the best things about using Resin.io. We can provide a disk image file for each type of computer, write the image to an SD card, connect the device to the internet, power it on, and Resin takes care of setting it up. This is super simple and will enable us to work with partners who may not have much technical expertise. Once the device is online it shows up in the appropriate project, and we’re ready to push code to it.</p>
+
+<p><img src="/images/mkit-fleet-resin2.png" alt="Resin Devices in an Application" /></p>
+
+<p>Resin gives us a set of management pages for every device. The Device Summary page provides some status information, notes area, a live log viewer, and several administrative features including remote reboot, restart the running application, LED blinking for physical identification, and more. Environment variables can be set at the application level and device level, allowing sensitive data—like database credentials—to be stored in a secure place not on the devices themselves. There are a lot more features, but the remote terminal is another worth mentioning. This has been useful in debugging as we develop our application.</p>
+
+<p><img src="/images/mkit-fleet-resin3.png" alt="Resin Device Summary" /></p>
+
+<p>Of course, we’re developing the application on <a href="https://github.com/opentechinstitute/mk-rpi">Github</a>, and by using <a href="https://docs.resin.io/">Resin’s great documentation</a> we can use the same code to deploy to Raspberry Pi 3’s, Odroid C1’s, or any other supported device. Each Resin application we create has a git remote URL that we add to our local application: “git remote add resin critzo@git.resin.io:critzo/mkrpi.git”. This adds a remote called “resin” to our local copy of the code.</p>
+
+<p><img src="/images/mkit-fleet-resin4.png" alt="Resin Application Git Remote" /></p>
+
+<p>On our local development machines, we can simply paste that text in, adding the remote for the Resin application. We can also rename the remote by changing out “resin” for something more specific. In our case this is needed so we can push code to different types of devices. The terminal output below shows the files in our local folder, followed by a listing of the git remotes we’re using.</p>
+
+<ul>
+<li>origin - developer’s fork of the official oti-upstream repository</li>
+<li>oti-upstream - the official code repository</li>
+<li>resin-odroid - the git remote URL for our Resin.io project for Odroid C1 devices</li>
+<li>resin-rpi3 - the git remote URL for our Resin.io project for Raspberry Pi 3 devices</li>
+</ul>
+
+<pre><code class="language-~shell">~/development/mk-rpi$ ls
+data.json            files       measurement-kit  README.md  test-runner
+Dockerfile.template  LICENSE.md  processjson.py   setup.sh   WIP
+
+~/development/mk-rpi$ git remote -v
+origin	git@github.com:critzo/mk-rpi.git (fetch)
+origin	git@github.com:critzo/mk-rpi.git (push)
+oti-upstream	git@github.com:opentechinstitute/mk-rpi.git (fetch)
+oti-upstream	git@github.com:opentechinstitute/mk-rpi.git (push)
+resin-odroid	critzo@git.resin.io:critzo/mkodroidc1.git (fetch)
+resin-odroid	critzo@git.resin.io:critzo/mkodroidc1.git (push)
+resin-rpi3	critzo@git.resin.io:critzo/mkrpi.git (fetch)
+resin-rpi3	critzo@git.resin.io:critzo/mkrpi.git (push)
+</code></pre>
+
+<p>Now when I’m ready to test out an update for Raspberry Pi 3s, I can just run the command:
+<code>~/development/mk-rpi$ git push resin-rpi3 master</code></p>
+
+<p>Or if I need to test on my Odroids: <code>~/development/mk-rpi$ git push resin-odroid master</code></p>
+
+<p>So far we’ve tested using the Raspberry Pi 3 and Odroid C1+. Like the single use case I described in my last blog post, we’re also using Measurement Kit, which in addition to providing other tests beyond NDT also outputs test results in JSON format and can push results to another server.</p>
+
+<p>There’s still work to be done. Currently we’re working on support for a database and visualization running on the device itself, envisioning a kiosk style monitor of internet quality for individual users or displays. We’ll also provide a server setup of the same database and visualization engine to enable central collection and visualization of a fleet of computers running Measurement Kit. But in our testing thus far, we’re excited about using Resin.io to deploy and manage a small fleet of computers to run network measurement tests in a consistent way, and we’re looking forward to trying it out in the field.</p>
+
+
+  
+
+  
+  <hr>
+  <footer>
+
+  
+    <section>
+    <h4>Share</h4>
+    <nav class="nav sharing-icons">
+      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fopentechinstitute.github.io%2f2017%2f10%2fdeploying-and-managing-a-fleet-of-measurement-kit-devices%2f" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fopentechinstitute.github.io%2f2017%2f10%2fdeploying-and-managing-a-fleet-of-measurement-kit-devices%2f" title="Share on Google+"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fopentechinstitute.github.io%2f2017%2f10%2fdeploying-and-managing-a-fleet-of-measurement-kit-devices%2f" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+      <a class="nav-item" href="https://twitter.com/home?status=https%3a%2f%2fopentechinstitute.github.io%2f2017%2f10%2fdeploying-and-managing-a-fleet-of-measurement-kit-devices%2f" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
+    </nav>
+  </section>
+
+  
+
+  
+
+  </footer>
+  
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        <aside class="col-sm-3 ml-auto blog-sidebar">
+  
+  <section class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p>Follow OTI&rsquo;s work progress on tech projects here!</p>
+  </section>
+  
+
+  
+        <section class="sidebar-module">
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+
+
+<li><a href="/2017/11/matrix-and-oti-at-mozfest/">Matrix and OTI at Mozfest</a></li>
+
+<li><a href="/2017/10/deploying-and-managing-a-fleet-of-measurement-kit-devices/">Deploying and Managing a Fleet of Measurement Kit Devices</a></li>
+
+<li><a href="/2017/10/building-raspberry-pi-m-lab-autotester/">Building Raspberry Pi M Lab Autotester</a></li>
+
+    </ol>
+  </section>
+
+  
+
+  
+  <section class="sidebar-module">
+    <h4>Links</h4>
+    <ol class="list-unstyled">
+      
+      <li><a href="https://github.com/opentechinstitute/">OTI Github</a></li>
+      
+      <li><a href="https://opentechnologyinstitute.org">Open Technology Institute</a></li>
+      
+    </ol>
+  </section>
+  
+</aside>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>
+      
+      Blog template created by <a href="https://twitter.com/mdo">@mdo</a>, ported to Hugo by <a href='https://twitter.com/mralanorth'>@mralanorth</a>.
+      
+      </p>
+      <p>
+      <a href="#">Back to top</a>
+      </p>
+      
+<script type="text/javascript">
+  var _paq = _paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.opentechinstitute.org/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '4']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+
+
+    </footer>
+
+  </body>
+
+</html>
